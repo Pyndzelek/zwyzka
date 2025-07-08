@@ -14,6 +14,9 @@
   margin: 0;
   padding: 0;
 }
+h1 {
+  line-height: 1.4;
+}
 
 html {
   scroll-behavior: smooth;
@@ -120,6 +123,8 @@ body {
 
 .hero-content {
   max-width: 800px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .hero-content h1 {
