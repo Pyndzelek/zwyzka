@@ -10,8 +10,7 @@
 
 @media (max-width: 768px) {
   h1 {
-    /* Zmniejszamy rozmiar czcionki dla ekranów o szerokości do 768px */
-    font-size: 2.2rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -23,6 +22,9 @@
 }
 h1 {
   line-height: 1.4;
+}
+h2 {
+  line-height: 1.3;
 }
 
 html {
@@ -163,13 +165,13 @@ body {
 .content-section,
 .feature-section,
 .content-section-gray {
-  padding: 60px 0;
+  padding: 40px 0;
 }
 
 .content-section h2,
 .feature-section h2 {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   margin-bottom: 40px;
   font-weight: 900;
 }
@@ -265,7 +267,7 @@ body {
   text-align: center;
 }
 .cta-section h2 {
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   margin-bottom: 15px;
 }
 .cta-section p {
@@ -381,7 +383,7 @@ body {
 }
 .services-section h2 {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   margin-bottom: 20px;
   font-weight: 900;
 }
