@@ -3,15 +3,8 @@
   --primary-color: #e63946; /* A strong, attention-grabbing red */
   --secondary-color: #457b9d; /* A professional blue */
   --dark-color: #1d3557; /* A dark navy for text */
-  /* ZMIANA: Neutralny, jasny szary kolor tła */
   --light-color: #e9ecef;
   --font-family: "Roboto", sans-serif;
-}
-
-@media (max-width: 768px) {
-  h1 {
-    font-size: 1.2rem;
-  }
 }
 
 /* General Reset and Body Styles */
@@ -25,6 +18,8 @@ h1 {
 }
 h2 {
   line-height: 1.3;
+  font-size: 2.5rem; /* Desktop h2 size */
+  font-weight: 900;
 }
 
 html {
@@ -171,9 +166,7 @@ body {
 .content-section h2,
 .feature-section h2 {
   text-align: center;
-  font-size: 1.8rem;
   margin-bottom: 40px;
-  font-weight: 900;
 }
 
 .content-section p {
@@ -184,6 +177,31 @@ body {
 
 .content-section-gray {
   background-color: var(--light-color);
+}
+
+/* Styles moved from inline */
+.section-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.section-title-long {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.section-subtitle-applications {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+  font-size: 1.1rem;
+}
+.contact-prompt {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.contact-link {
+  color: var(--primary-color);
 }
 
 .secondary-button {
@@ -218,13 +236,11 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
-/* style.css */
-
 .feature-icon {
   width: 64px;
   height: 64px;
   margin-bottom: 20px;
-  color: var(--primary-color); /* Nadajemy ikonom główny kolor marki */
+  color: var(--primary-color);
 }
 
 .feature-card h3 {
@@ -267,7 +283,6 @@ body {
   text-align: center;
 }
 .cta-section h2 {
-  font-size: 1.8rem;
   margin-bottom: 15px;
 }
 .cta-section p {
@@ -331,8 +346,243 @@ body {
   border-top: 1px solid #3a506b;
 }
 
-/* Media Queries for Responsiveness */
+.services-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.services-section .section-subtitle {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  font-size: 1.1rem;
+}
+
+.services-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 15px;
+}
+
+.services-list li {
+  background-color: var(--light-color);
+  padding: 15px 20px;
+  border-radius: 8px;
+  border-left: 5px solid var(--secondary-color);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.services-list li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.services-list li::before {
+  content: "✔";
+  color: var(--secondary-color);
+  margin-right: 12px;
+  font-size: 1.2rem;
+}
+
+/* APPLICATIONS SECTION */
+.applications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.application-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-top: 5px solid var(--primary-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.application-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+}
+
+.application-card h3 {
+  font-size: 1.6rem;
+  color: var(--dark-color);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.application-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.application-card li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.application-card li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--secondary-color);
+  font-weight: 700;
+}
+
+.ukryta-sekcja {
+  display: none;
+}
+
+/* SWIPER CAROUSEL SECTION */
+.swiper {
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.swiper-pagination {
+  display: none;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+:root {
+  --swiper-theme-color: var(--primary-color);
+  --swiper-navigation-color: #fff;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: rgba(29, 53, 87, 0.5);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: rgba(29, 53, 87, 0.8);
+}
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 24px !important;
+  font-weight: 900;
+}
+
+/* TECHNICAL SPECS SECTION */
+.specs-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 0 40px;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 25px rgba(29, 53, 87, 0.08);
+}
+
+.specs-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.specs-list > .specs-item:last-child {
+  border-bottom: none;
+}
+
+.specs-label {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: var(--dark-color);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.specs-label svg {
+  width: 28px;
+  height: 28px;
+  color: var(--primary-color);
+  flex-shrink: 0;
+}
+
+.specs-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  text-align: right;
+  white-space: nowrap;
+  padding-left: 20px;
+}
+
+.spec-note {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Separators */
+.separator-line {
+  border: none;
+  height: 2px;
+  background-color: #e9ecef;
+  width: 100%;
+}
+
+.separator-gradient {
+  border: none;
+  height: 2px;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    var(--primary-color),
+    transparent
+  );
+  margin: 80px 0;
+}
+
+/* ==============================================
+MEDIA QUERIES - Strefa stylów responsywnych
+==============================================
+*/
 @media (max-width: 768px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+  h2 {
+    font-size: 1.8rem; /* Mobile h2 size */
+  }
+
   .nav-menu {
     position: fixed;
     left: -100%;
@@ -380,259 +630,8 @@ body {
   .feature-grid {
     grid-template-columns: 1fr;
   }
-}
-.services-section h2 {
-  text-align: center;
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  font-weight: 900;
-}
 
-.services-section .section-subtitle {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 40px auto;
-  font-size: 1.1rem;
-}
-
-.services-list {
-  list-style: none;
-  padding: 0;
-  display: grid;
-  /* Na mniejszych ekranach będzie 1 kolumna, na większych do 2 */
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 15px; /* Odstęp między elementami */
-}
-
-.services-list li {
-  background-color: var(--light-color);
-  padding: 15px 20px;
-  border-radius: 8px;
-  border-left: 5px solid var(--secondary-color);
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.services-list li:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Opcjonalny "ptaszek" przed każdą usługą dla lepszego efektu wizualnego */
-.services-list li::before {
-  content: "✔";
-  color: var(--secondary-color);
-  margin-right: 12px;
-  font-size: 1.2rem;
-}
-
-/*------------------------------------*\
-  #APPLICATIONS SECTION
-\*------------------------------------*/
-
-.applications-grid {
-  display: grid;
-  /* Elastyczna siatka: dopasowuje liczbę kolumn do szerokości ekranu */
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px; /* Odstępy między kartami */
-}
-
-.application-card {
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 30px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  border-top: 5px solid var(--primary-color); /* Akcent kolorystyczny */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.application-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
-}
-
-.application-card h3 {
-  font-size: 1.6rem;
-  color: var(--dark-color);
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #eee;
-}
-
-.application-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.application-card li {
-  position: relative;
-  padding-left: 25px; /* Miejsce na "ptaszek" */
-  margin-bottom: 12px;
-  line-height: 1.5;
-}
-
-/* Dodanie "ptaszka" przed każdym elementem listy */
-.application-card li::before {
-  content: "✔";
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: var(--secondary-color);
-  font-weight: 700;
-}
-
-.ukryta-sekcja {
-  display: none;
-}
-
-/*------------------------------------*\
-  #SWIPER CAROUSEL SECTION
-\*------------------------------------*/
-
-.swiper {
-  width: 100%;
-  border-radius: 10px;
-  /* Zwiększamy padding na dole (50px), aby zrobić miejsce na kropki nawigacyjne */
-  padding: 10px 10px 10px 10px;
-}
-
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  /* NOWOŚĆ: Ustawiamy kwadratowe proporcje dla każdego slajdu */
-  aspect-ratio: 1 / 1;
-  border-radius: 8px; /* Zaokrąglamy rogi slajdu */
-  overflow: hidden; /* Ukrywamy to, co wystaje z obrazka */
-}
-.swiper-pagination {
-  display: none;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Gwarantuje, że obraz wypełni kwadratowy slajd bez zniekształceń */
-}
-
-/* Stylowanie strzałek i kropek nawigacyjnych pod kolorystykę strony */
-:root {
-  --swiper-theme-color: var(--primary-color);
-  --swiper-navigation-color: #fff;
-}
-
-.swiper-button-prev,
-.swiper-button-next {
-  background-color: rgba(29, 53, 87, 0.5);
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  transition: background-color 0.3s ease;
-}
-.swiper-button-prev:hover,
-.swiper-button-next:hover {
-  background-color: rgba(29, 53, 87, 0.8);
-}
-.swiper-button-prev::after,
-.swiper-button-next::after {
-  font-size: 24px !important;
-  font-weight: 900;
-}
-
-/*------------------------------------*\
-  #TECHNICAL SPECS SECTION (Schludna Wersja)
-\*------------------------------------*/
-
-.specs-list {
-  display: grid;
-  /* Dwie kolumny na większych ekranach, jedna na mniejszych */
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 0 40px; /* Odstęp tylko między kolumnami */
-  border: 1px solid #e9ecef; /* Delikatna ramka wokół całości */
-  border-radius: 8px;
-  overflow: hidden; /* Potrzebne do zaokrąglenia rogów wew. elementów */
-  box-shadow: 0 5px 25px rgba(29, 53, 87, 0.08);
-}
-
-.specs-item {
-  display: flex;
-  justify-content: space-between; /* Kluczowe dla układu: etykieta po lewej, wartość po prawej */
-  align-items: center;
-  padding: 20px;
-  /* Delikatna linia oddzielająca każdy wiersz */
-  border-bottom: 1px solid #e9ecef;
-}
-
-/* Usuwamy dolną ramkę ostatniego elementu, żeby nie dublować z ramką kontenera */
-.specs-list > .specs-item:last-child {
-  border-bottom: none;
-}
-
-.specs-label {
-  display: flex;
-  align-items: center;
-  gap: 15px; /* Odstęp między ikoną a tekstem */
-  color: var(--dark-color);
-  font-weight: 700;
-  font-size: 1rem;
-}
-
-.specs-label svg {
-  width: 28px;
-  height: 28px;
-  color: var(--primary-color); /* Kolor ikony zgodny z motywem */
-  flex-shrink: 0; /* Zapobiega kurczeniu się ikony */
-}
-
-.specs-value {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--secondary-color);
-  text-align: right;
-  white-space: nowrap; /* Zapobiega łamaniu linii w wartościach */
-  padding-left: 20px; /* Daje trochę oddechu od etykiety */
-}
-
-.spec-note {
-  text-align: center;
-  margin-top: 30px;
-  font-size: 0.9rem;
-  color: #666;
-}
-
-/* Poprawka dla nieparzystej liczby elementów - ostatni rozciągnie się na całą szerokość */
-@media (min-width: 768px) {
   .specs-list > .specs-item:last-child:nth-child(odd) {
-    grid-column: span 2;
+    grid-column: span 1;
   }
-}
-
-/* Prosty separator w formie linii */
-.separator-line {
-  border: none; /* Usuwamy domyślny styl linii */
-  height: 2px; /* Grubość linii */
-  background-color: #e9ecef; /* Kolor linii (nasz srebrny odcień) */
-  width: 100%; /* Szerokość na 100% */ /* Duży margines pionowy, aby oddzielić sekcje */
-}
-
-/* Bardziej ozdobny separator z gradientem */
-.separator-gradient {
-  border: none;
-  height: 2px;
-  /* Linia, która zanika po bokach, używając głównego koloru marki */
-  background-image: linear-gradient(
-    to right,
-    transparent,
-    var(--primary-color),
-    transparent
-  );
-  margin: 80px 0;
 }
