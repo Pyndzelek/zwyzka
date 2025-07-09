@@ -8,6 +8,13 @@
   --font-family: "Roboto", sans-serif;
 }
 
+@media (max-width: 768px) {
+  h1 {
+    /* Zmniejszamy rozmiar czcionki dla ekranów o szerokości do 768px */
+    font-size: 2.2rem;
+  }
+}
+
 /* General Reset and Body Styles */
 * {
   box-sizing: border-box;
@@ -123,8 +130,7 @@ body {
 
 .hero-content {
   max-width: 800px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 0 20px;
 }
 
 .hero-content h1 {
